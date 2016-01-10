@@ -8,6 +8,8 @@ namespace HealthyProgrammerCOOL
 {
     public class HealthyProgrammerClock
     {
+        private const double TWENTY_FIVE_MINUTES = 1500;
+        private const double TWENTY_MINUTES = 1200;
         #region Fields
         private int _count;
 
@@ -85,18 +87,18 @@ namespace HealthyProgrammerCOOL
             {
                 case 0:
                     _message = "Time to walk!";
-                    _timer.Interval = 25000;
+                    _timer.Interval = TWENTY_FIVE_MINUTES;
                     break;
 
                 case 1:
                 case 3:
                     _message = "Time to change your posture!";
-                    _timer.Interval = 20000;
+                    _timer.Interval = TWENTY_MINUTES;
                     break;
 
                 case 2:
                     _message = "Time to stand up and relax your eyes!";
-                    _timer.Interval = 20000;
+                    _timer.Interval = TWENTY_MINUTES;
                     break;
 
                 default:

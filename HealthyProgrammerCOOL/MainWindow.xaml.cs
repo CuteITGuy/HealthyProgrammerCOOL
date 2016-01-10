@@ -1,4 +1,5 @@
-﻿using System.Threading;
+﻿using System.IO;
+using System.Threading;
 using Windows.UI.Notifications;
 using CB.Windows.UI;
 
@@ -48,7 +49,10 @@ namespace HealthyProgrammerCOOL
             _clock = new HealthyProgrammerClock(SynchronizationContext.Current);
             _clock.Elapsed += Clock_Elapsed;
             _clock.Start();
-            _toast = new Toast();
+            _toast = new Toast
+            {
+                ImageSource = "file:///" + Path.GetFullPath("health2.png")
+            };
             _toast.Activated += Toast_Activated;
             _toast.Dismissed += Toast_Dismissed;
         }
